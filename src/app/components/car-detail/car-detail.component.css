@@ -1,0 +1,149 @@
+/* Carousel Styling */
+.car-carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .carousel-control-prev {
+    left: 0;
+  }
+  
+  .carousel-control-next {
+    right: 0;
+  }
+  
+  
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .carousel-inner {
+    border-radius: 10px;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .car-details {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .car-details:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .car-details h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .car-details h6 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #777;
+    line-height: 1.6;
+  }
+  
+  .car-details p {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .car-details .price {
+    font-weight: bold;
+    font-size: 28px;
+    color: #ff5722;
+    margin-bottom: 10px;
+  }
+  
+  .car-details .separator {
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+  }
+  
+  .car-details .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .car-details .details .label {
+    font-size: 16px;
+    color: #777;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+  
+  .car-details .details .value {
+    font-size: 20px;
+    color: #333;
+  }
+  .buton {
+    position: relative;
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #dcb14a;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .buton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+  }
+  
+  .buton:hover::before {
+    transform: translateX(100%);
+  }
+  
+  .buton:hover {
+    color: #dcb14a;
+    background-color: #fff;
+    transition: all 0.5s ease-in-out;
+  }

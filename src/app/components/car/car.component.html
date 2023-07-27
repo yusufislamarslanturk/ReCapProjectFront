@@ -1,20 +1,74 @@
-<div class="alert alert-secondary" role="alert" style="text-align: center;">
-    CARS
-  </div>
+<!-- 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Car</th>
-            <th>Brand Name</th>
-            <th>Color Name</th>
-            <th>Daily Price</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let car of cars">
-        <td>{{car.description}}</td>
-        <td>{{car.brandName}}</td>
-        <td>{{car.colorName}}</td>
-        <td>{{car.dailyPrice}}</td>
-    </tr>
-</table>
+ <div class="row mt-4" style="margin-left: 1%">
+    <div
+      *ngFor="let car of carDetails"
+      class="card mt-2 mr-2"
+      style="width: 18rem; margin-right: 10px"
+    >
+      <img
+        *ngIf="car.imagePath"
+        [src]="baseUrl+car.imagePath"
+        class="card-img-top"
+        style="object-fit: cover"
+        width="100"
+        height="50%"
+      />
+  
+      <img
+        *ngIf="!car.imagePath"
+        [src]="baseUrl+'default-car.jpg'"
+        class="card-img-top"
+        style="object-fit: cover"
+        width="100"
+        height="50%"
+      />
+  
+      <div class="card-body">
+        <h4 class="cart-title">{{ car.brandName + " " + car.modelName }}</h4>
+      </div>
+  
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Model Yılı | {{ car.modelYear }}</li>
+        <li class="list-group-item">Marka | {{ car.brandName }}</li>
+        <li class="list-group-item">Renk | {{ car.colorName }}</li>
+        <li class="list-group-item">Açıklama | {{ car.description }}</li>
+        <li class="list-group-item">Günlük Fiyat:  {{ car.dailyPrice + " ₺" }}</li>
+        <li class="list-group-item">
+          Aylık %20 İndirimli Fiyat:  {{ car.dailyPrice * 30 * 0.8 + " ₺" }}
+        </li>
+      </ul>
+  
+      <div class="card-body">
+        <div class="row">
+  
+          <button
+            type="button"
+            class="btn btn-outline-success"
+          >
+            Araç Detayı
+          </button>
+  
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+  <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+<div class="row row-cols-1 row-cols-md-2 g-4" style="margin-top: 10px; margin-bottom: 10px;">
+  <div class="col" *ngFor="let car of carDetails">
+    <div class="card">
+      <img style="height: 330px;"  [src]="baseUrl+car.imagePath" class="card-img-top" alt="Hollywood Sign on The Hill" />
+      <div class="card-body">
+        <h5 class="card-title">{{car.brandName}} - {{car.colorName}}</h5>
+        <p class="card-text">
+          {{car.description}}
+        </p>
+      </div>
+      <div class="card-footer d-flex justify-content-between align-items-center">
+        <small class="fw-bold text-start">{{car.dailyPrice}} TL / Günlük</small>
+        <a routerLink="/cars/{{car.carId}}" class="buton float-end text-center">Detaylı Görüntüle</a>
+      </div>
+    </div>
+  </div>
+</div>

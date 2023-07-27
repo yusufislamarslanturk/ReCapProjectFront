@@ -1,0 +1,10 @@
+.hover-bg {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .hover-bg:hover {
+    background-color: #dcb14a;
+    color:white;
+  }
+  
+  

@@ -1,19 +1,22 @@
 
-  <ul class="list-group">
-    <li
-      class="list-group-item text-center text-white bg-black"
-      (click)="reset()"
-      [class]="getAllColorClass()"
-      routerLink="/cars"
-    >
-      Tüm Renkler
-    </li>
-    <li
-      (click)="setCurrentColor(color)"
-      routerLink="/cars/color/{{ color.id }}"
-      *ngFor="let color of colors"
-      [class]="getCurrentColorClass(color)"
-    >
-      {{ color.colorName }}
-    </li>
-  </ul>
+<div class="py-2 px-4 bg-light mb-3 text-center">
+  <strong class="small text-uppercase fw-bold">Renkler</strong>
+</div>
+<ul class="list-group list-group-flush" style="cursor: pointer; margin-bottom: 20px;">
+  <li
+    (click)="clearCurrentColor()"
+    routerLink="/cars"
+    [class]="getAllColorClass()"
+  >
+    Tüm Renkler
+  </li>
+  <li
+  (click)="setCurrentColor(color)"
+  routerLink="/cars/color/{{ color.colorId }}"
+  *ngFor="let color of colors"
+  [class]="getCurrentColorClass(color)"
+  class="hover-bg"
+>
+  {{ color.colorName }}
+</li>
+</ul>

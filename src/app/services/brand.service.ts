@@ -17,8 +17,7 @@ import { Brand } from '../models/brand';
   }
 
   getBrandsById(brandId: number): Observable<ListResponseModel<Brand>> {
-    let newPath = this.apiUrl + 'getbyid?id=' + brandId;
+    let newPath = this.apiUrl + 'getbyid?carId=' + brandId;
     return this.httpClient.get<ListResponseModel<Brand>>(newPath);
-    console.log("asdasdasdasdadasdasdasdasdasdsdasdasdasdasdasdasdasdasdasdasd")
   }
 }

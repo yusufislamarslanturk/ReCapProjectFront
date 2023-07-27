@@ -1,27 +1,29 @@
-<ul class="list-group">
-    <li [class]="getAllBrandClass()" routerLink="/cars">Tüm Markalar</li>
-    <li
-      (click)="setCurrentBrand(brand)"
-      routerLink="/cars/brand/{{ brand.id }}"
-      *ngFor="let brand of brands"
-      [class]="getCurrentBrandClass(brand)"
-    >
-      {{ brand.brandName }}
-    </li>
-  </ul>
+<h5 class="text-uppercase mb-4" style="margin-top: 30px">Kategoriler</h5>
+<div class="py-2 px-4 bg-light mb-3 text-center">
+  <strong class="small text-uppercase fw-bold">Markalar</strong>
+</div>
+<ul class="list-group list-group-flush" style="cursor: pointer">
+  <li
+    (click)="clearCurrentBrand()"
+    routerLink="/cars"
+    [class]="getAllBrandClass()"
+  >
+    Tüm Markalar
+  </li>
+  <li
+    (click)="setCurrentBrand(brand)"
+    routerLink="/cars/brand/{{ brand.brandId }}"
+    *ngFor="let brand of brands"
+    [class]="getCurrentBrandClass(brand)"
+    class="hover-bg" 
+  >
+    {{ brand.brandName }}
+  </li>
 
-  <div class="alert alert-success" role="alert" style="text-align: center;">
-    BRANDS
-  </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Brand Name</th>
-      </tr>
-    </thead>
-      <tr *ngFor="let brand of brands">
-          <td>{{brand.id}}</td>
-          <td>{{brand.brandName}}</td>
-      </tr>
-  </table> 
+  <!-- <ul class="list-unstyled small text-muted ps-lg-4 font-weight-normal" style="cursor: pointer">
+  <li  class="mb-2"><a >Tüm Markalar</a></li>
+  <li  class="mb-2">
+    <a >{{ brand.brandName }}</a>
+  </li>
+</ul> -->
+</ul>

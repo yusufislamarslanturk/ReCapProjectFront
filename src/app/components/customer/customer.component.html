@@ -1,16 +1,16 @@
-<div class="alert alert-secondary" role="alert" style="text-align: center"
->
-    CUSTOMERS
-  </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>User Id</th>
-        <th>Company Name</th>
-      </tr>
-    </thead>
+<div class="text-center text-bg-light p-1">
+  <b>Müşteriler</b>
+</div>
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">UserId</th>
+    <th scope="col">CompanyName</th>
+  </tr>
+</thead>
+<tbody >
     <tr *ngFor="let customer of customers">
-      <td>{{ customer.userId }}</td>
-      <td>{{ customer.companyName }}</td>
-    </tr>
-  </table>
+      <td>{{customer.userId}}</td>
+      <td>{{customer.companyName}}</td>
+  </tr>
+</table>
